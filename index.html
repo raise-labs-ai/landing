@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAISE Labs – Responsible AI Scoring Engine</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #1c1c1e; background: #f9f9f9; }
+
+    /* Navbar */
+    .navbar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem; background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #1c7ed6; }
+    .logo span { color: #000; }
+    .navbar nav a {
+      margin-left: 1.5rem; text-decoration: none; color: #333; font-weight: 500;
+    }
+    .navbar nav a:hover { color: #1c7ed6; }
+
+    /* Hero */
+    .hero {
+      padding: 4rem 2rem; text-align: center;
+      background: linear-gradient(to right, #1c7ed6, #339af0); color: #fff;
+    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .cta-button {
+      background: #fff; color: #1c7ed6; padding: 0.75rem 1.5rem;
+      text-decoration: none; font-weight: bold; border-radius: 5px;
+    }
+
+    /* Sections */
+    .about, .features, .contact {
+      padding: 3rem 2rem; max-width: 900px; margin: auto;
+    }
+    .about p, .contact p { margin-top: 1rem; font-size: 1rem; }
+    .features ul {
+      list-style: none; padding-left: 1rem;
+    }
+    .features li::before {
+      content: "✔️"; margin-right: 0.5rem;
+    }
+
+    /* Contact */
+    form {
+      margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+    input[type="email"] {
+      padding: 0.75rem; flex: 1 1 300px; border: 1px solid #ccc; border-radius: 5px;
+    }
+    button {
+      padding: 0.75rem 1.25rem; background-color: #1c7ed6; color: #fff; border: none; border-radius: 5px;
+    }
+    button:hover { background-color: #1864ab; }
+    .form-status { margin-top: 1rem; color: green; }
+
+    /* Footer */
+    .footer {
+      text-align: center; padding: 1rem 0; background: #eee; margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .cta-button { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">RAISE<span> Labs</span></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Build Responsible AI, Automatically</h1>
+    <p>RAISE Labs offers open tools to assess, score, and improve AI systems for compliance, ethics, and performance.</p>
+    <a href="#contact" class="cta-button">Join Early Access</a>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About RAISE</h2>
+    <p>RAISE (Responsible AI Scoring Engine) is an open initiative helping developers and companies build AI with confidence. From risk scoring to compliance checklists, our SDKs and APIs are made to integrate easily into your ML pipelines.</p>
+  </section>
+
+  <section id="features" class="features">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Transparent AI risk scoring system</li>
+      <li>Open-source SDKs and APIs</li>
+      <li>Alignment with global AI regulations</li>
+      <li>Extensible rules engine with metadata</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Stay in the Loop</h2>
+    <p>Want to be notified when we launch or contribute? Drop your email.</p>
+    <form id="contactForm">
+      <input type="email" placeholder="you@example.com" required />
+      <button type="submit">Notify Me</button>
+    </form>
+    <p class="form-status" id="formStatus"></p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 RAISE Labs. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = e.target[0].value;
+      const status = document.getElementById('formStatus');
+      if (email) {
+        status.textContent = "Thanks! We'll keep you updated.";
+        e.target.reset();
+      } else {
+        status.textContent = "Please enter a valid email.";
+      }
+    });
+  </script>
+
+</body>
+</html>
